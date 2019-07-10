@@ -1,0 +1,32 @@
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ouJRTKivYp-IJF905P_GFgi7HU6Kt9qbDrSkPxCUZEbizo_Xyg');
+    background-size: cover
+    
+}
+
+.container {
+    background-color: rgba(255,255,255,0.75);
+    /* height: 25em; */
+    margin-top: 15%;
+    padding: 5%;
+    /* width: 75%; */
+}
+
+.regButton {
+    text-align: right;
+    margin: 10px 0 10px 0;
+}
+
+.btn {
+    margin-right: 23%;
+}
+
+.regNumList {
+    border: solid #000 3px;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: center;
+    width: 30%;
+    background: #eac407 100%;
+    font-size: 20px;
+}
