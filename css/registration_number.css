@@ -4,10 +4,14 @@ body {
     
 }
 
+h2 {
+    margin: 30px 0 30px 0;
+}
+
 .container {
     background-color: rgba(255,255,255,0.75);
     /* height: 25em; */
-    margin-top: 15%;
+    /* margin-top: 15%; */
     padding: 5%;
     /* width: 75%; */
 }
@@ -18,15 +22,28 @@ body {
 }
 
 .btn {
-    margin-right: 23%;
+    width: 20%;
+    border-radius: 0px;
 }
 
-.regNumList {
+.regNumList{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 10px;
+    margin: 16px 0 0 0;
+}
+
+.regNumList div{
     border: solid #000 3px;
     border-radius: 5px;
     padding: 3px;
     text-align: center;
-    width: 30%;
     background: #eac407 100%;
     font-size: 20px;
+    margin: 0 0px 10px 0;
+}
+
+
+.filter-heading {
+
 }

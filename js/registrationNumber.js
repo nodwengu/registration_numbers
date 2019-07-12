@@ -13,14 +13,14 @@ function createRegistrationNumber() {
 
     function getAllFromCapeTown(regNumbers) {
         let capeTownNumbers = [];
-
+        
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            if(elem.startsWith("CA")) {
+            //console.log(regNumbers);
+            if(elem.registration.startsWith("CA")) {
                 capeTownNumbers.push(elem);
             }
         }
-
         return capeTownNumbers;
     }
 
@@ -29,11 +29,10 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            if(elem.startsWith("CJ")) {
+            if((elem.registration).startsWith("CJ")) {
                 paarlNumbers.push(elem);
             }
         }
-
         return paarlNumbers;
     }
 
@@ -42,11 +41,10 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            if(elem.startsWith("CY")) {
+            if((elem.registration).startsWith("CY")) {
                 bellvilleNumbers.push(elem);
             }
         }
-
         return bellvilleNumbers;
     }
 
@@ -55,21 +53,19 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            if(elem.startsWith("CL")) {
+            if((elem.registration).startsWith("CL")) {
                 stellenboschNumbers.push(elem);
             }
         }
-
         return stellenboschNumbers;
     }
 
-    function setNameObj() {
+    function setRegObj() {
         obj = {
            registration: registrationNumber
         }
-     }
-  
-     function getNameObj() {
+    } 
+     function getRegObj() {
         return obj;
      }
   
@@ -78,9 +74,8 @@ function createRegistrationNumber() {
   
         for(let i = 0; i < registrations.length; i++) {
            let elem = registrations[i];
-           let regNumber = elem.registrationNumber;
-
-           if (regNumberEntered[registrationNumber] === undefined){
+           let regNumber = elem.registration;
+           if (regNumberEntered[regNumber] === undefined){
                //add an entry for the user that was greeted in the Object Map
                regNumberEntered[regNumber] = 0;
            } else {
@@ -106,22 +101,36 @@ function createRegistrationNumber() {
         getAllFromPaarl,
         getAllFromBellville,
         getAllFromStellenbosch,
-        setNameObj,
-        getNameObj,
+        setRegObj,
+        getRegObj,
         checkRegNumber,
 
     }
 }
 
 const registrationsInstance = createRegistrationNumber();
-let testArr = ['CL 900', 'CJ 678 543', 'CA 34567', 'CJ 67890', 'CN 7864', 'CA 888']
-     
+let testArr = ['CL 900', 'CJ 678 543', 'CA 34567', 'CJ 67890', 'CN 7864', 'CA 888', 'CY 789', 'CL 7878']     
 
 // registrationsInstance.setRegNumber('CA 1234');
 // alert(registrationsInstance.getRegNumber());
 
-// let capeTownRegs = registrationsInstance.getAllFromCapeTown(testArr)
-// console.log(capeTownRegs);
+let capeRegs = registrationsInstance.getAllFromCapeTown(testArr)
+console.log(capeRegs);
 
-let capeTownRegs = registrationsInstance.getAllFromCapeTown(testArr)
-console.log(capeTownRegs);
+// let paarlRegs = registrationsInstance.getAllFromPaarl(testArr)
+// console.log(paarlRegs);
+
+// let bellvilleRegs = registrationsInstance.getAllFromBellville(testArr)
+// console.log(bellvilleRegs);
+
+// let stellenRegs = registrationsInstance.getAllFromStellenbosch(testArr)
+// console.log(stellenRegs);
+
+// registrationsInstance.setRegNumber('CA 2020')
+// registrationsInstance.setRegObj();
+// console.log(registrationsInstance.getRegObj());
+
+// registrationsInstance.setRegNumber('CL 900');
+// let reg_numbers = [{registration:'CA 123'}, {registration:'CL 900'}, {registration:'CY 246'}]
+// alert(registrationsInstance.checkRegNumber(reg_numbers));
+

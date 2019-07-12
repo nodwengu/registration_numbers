@@ -9,39 +9,52 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="registration_number.css">
+    <link rel="stylesheet" href="css/registration_number.css">
 </head>
 <body>
     
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+                <div class="col-sm-2">
+                
+                    </div>
+            <div class="col-sm-8">
+                <div class="">
+                    <h2>Add New Registration</h2>
+                </div>
                 <div>
                     <label for="regNo">Registration Number:</label>
-                    <input type="text" id="regNo" class="">
+                    <input type="text" id="regNoInput" class="class form-control" value="">
                 </div>
                 <div class="regButton">
-                    <div class="btn btn-success">Add</div>
+                    <div class="btn btn-success" id="addRegNumber">Add</div>
+                </div>
+
+                <hr style="border: dashed 1px gray;">
+
+                <div class="filter-heading">
+                    <h2>Filter By City/Town</h2>
                 </div>
 
                 <div style="">
-                    <label class="radio-inline"><input type="radio" value="">Option 1</label>
-                    <label class="radio-inline"><input type="radio" value="">Option 2</label>
-                    <label class="radio-inline"><input type="radio" value="">Option 3</label>
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="all">All</label>
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="cape town">Cape Town</label>
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="paarl">Paarl</label>
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="bellville">Bellvile</label>
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="stellenbosch">Stellenbosch</label>
                 </div>
 
                 <div class="regButton">
-                    <div class="btn btn-success">Show</div>
+                    <div class="btn btn-success" id="showFilter">Show</div>
                 </div>
 
                 <div class="regNumList">
-                    <span>CA 12084</span>
+                    <!-- <span>CA 12084</span> -->
                 </div>
     
             </div>
-            <div class="col-sm-6">
-                <label for="regNo">Registration Number:</label>
-                <input type="text" id="regNo" class="">
+            <div class="col-sm-2">
+                
             </div>
         </div>
         
@@ -51,6 +64,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script src="registration_number.js"></script>
+    <script src="js/registrationNumber.js"></script>
+    <script src="js/registration_number.js"></script>
 </body>
 </html>
