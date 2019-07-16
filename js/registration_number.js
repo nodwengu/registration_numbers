@@ -3,9 +3,9 @@ let registrationNumberElem = document.querySelector('.regNumList');
 let regNumberRadio = document.querySelectorAll('.regNumberRadio');
 let showFilterBtn = document.querySelector('#showFilter');
 
-const registrationNumberInstance = createRegistrationNumber();
-
 let data = JSON.parse(localStorage.getItem('registrationNumbers'));
+
+const registrationNumberInstance = createRegistrationNumber();
 
 if(localStorage.getItem('registrationNumbers')) {
    for(let i = 0; i < data.length; i++) {
@@ -15,6 +15,14 @@ if(localStorage.getItem('registrationNumbers')) {
 
 function storeRegistration() {
    let regNoInputVal = document.querySelector('#regNoInput').value;
+
+   if( registrationNumberInstance.displayError(regNoInputVal)) {
+      document.querySelector('.error').classList.add('showError');
+      document.querySelector('.error').innerHTML = "Error in your input fields";
+      return;
+   } else {
+      document.querySelector('.error').classList.remove('showError');
+   }
 
    registrationNumberInstance.setRegNumber(regNoInputVal)
    registrationNumberInstance.setRegObj();
@@ -49,25 +57,22 @@ function storeRegistration() {
 }
 
 function filterRegistrations() {
-  
    for(let i = 0; i < regNumberRadio.length; i++) {
       let elem = regNumberRadio[i];
 
       if(elem.checked) {
          if (registrationNumberElem.hasChildNodes()) {
             // It has at least one
-            //alert("There are elements");
             registrationNumberElem.innerHTML = "";
          }
 
          if(elem.value === 'cape town'){
-           
+
             let regFromCapeTown = registrationNumberInstance.getAllFromCapeTown(data);
             for(let i = 0; i < regFromCapeTown.length; i++) {
                let elem = regFromCapeTown[i];
                registrationNumberElem.innerHTML += "<div>" + elem.registration + "</div>";
             }
-           //alert(regFromCapeTown.length)
 
          } else if(elem.value === 'paarl') {
             let regFromPaarl = registrationNumberInstance.getAllFromPaarl(data);
@@ -97,8 +102,6 @@ function filterRegistrations() {
       }
    }
 }
-
-
 
 addRegNumberBtn.addEventListener('click', storeRegistration);
 

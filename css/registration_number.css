@@ -44,6 +44,12 @@ h2 {
 }
 
 
-.filter-heading {
+.error {
+    color: #f00; 
+    display: none;
+    text-align: center;
+}
 
+.showError {
+    display: block;
 }

@@ -13,11 +13,12 @@ function createRegistrationNumber() {
 
     function getAllFromCapeTown(regNumbers) {
         let capeTownNumbers = [];
-        
+
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            //console.log(regNumbers);
-            if(elem.registration.startsWith("CA")) {
+            let registrationNumber = elem.registration.toUpperCase();
+          
+            if(registrationNumber.startsWith("CA")) {
                 capeTownNumbers.push(elem);
             }
         }
@@ -29,7 +30,9 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            if((elem.registration).startsWith("CJ")) {
+            let registrationNumber = elem.registration.toUpperCase();
+
+            if(registrationNumber.startsWith("CJ")) {
                 paarlNumbers.push(elem);
             }
         }
@@ -41,7 +44,9 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            if((elem.registration).startsWith("CY")) {
+            let registrationNumber = elem.registration.toUpperCase();
+            
+            if(registrationNumber.startsWith("CY")) {
                 bellvilleNumbers.push(elem);
             }
         }
@@ -53,7 +58,9 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            if((elem.registration).startsWith("CL")) {
+            let registrationNumber = elem.registration.toUpperCase();
+            
+            if(registrationNumber.startsWith("CL")) {
                 stellenboschNumbers.push(elem);
             }
         }
@@ -86,13 +93,17 @@ function createRegistrationNumber() {
         let newRegNumber = getRegNumber();
         for(let key in regNumberEntered) {
           if(regNumberEntered.hasOwnProperty(newRegNumber)) {
-              alert(newRegNumber + " already exists");
+              //alert(newRegNumber + " already exists");
               repeated  = true;
               break;
           } 
         }   
         return repeated ;
      } 
+
+     function displayError(name) {
+        return name == "" || !isNaN(name); 
+     }
 
     return {
         setRegNumber,
@@ -104,18 +115,20 @@ function createRegistrationNumber() {
         setRegObj,
         getRegObj,
         checkRegNumber,
+        displayError
 
     }
 }
 
-const registrationsInstance = createRegistrationNumber();
-let testArr = ['CL 900', 'CJ 678 543', 'CA 34567', 'CJ 67890', 'CN 7864', 'CA 888', 'CY 789', 'CL 7878']     
+// const registrationsInstance = createRegistrationNumber();
+// //let testArr = ['CL 900', 'CJ 678 543', 'CA 34567', 'CJ 67890', 'CN 7864', 'CA 888', 'CY 789', 'CL 7878'] ;
+// let testArr = [{registration: 'CL 900'}, {registration: 'CJ 678 543'}, {registration:'CA 34567'}, {registration:'CJ 67890'}, {registration:'CN 7864'}, {registration:'CA 888'}, {registration:'CY 789'}, {registration:'CL 7878'}]    
 
 // registrationsInstance.setRegNumber('CA 1234');
 // alert(registrationsInstance.getRegNumber());
 
-let capeRegs = registrationsInstance.getAllFromCapeTown(testArr)
-console.log(capeRegs);
+// let capeRegs = registrationsInstance.getAllFromCapeTown(testArr)
+// console.log(capeRegs);
 
 // let paarlRegs = registrationsInstance.getAllFromPaarl(testArr)
 // console.log(paarlRegs);
