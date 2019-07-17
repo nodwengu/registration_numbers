@@ -16,7 +16,7 @@ if(localStorage.getItem('registrationNumbers')) {
 function storeRegistration() {
    let regNoInputVal = document.querySelector('#regNoInput').value;
 
-   if( registrationNumberInstance.displayError(regNoInputVal)) {
+   if( registrationNumberInstance.displayError(regNoInputVal) || !registrationNumberInstance.validInput(regNoInputVal)) {
       document.querySelector('.error').classList.add('showError');
       document.querySelector('.error').innerHTML = "Error in your input fields";
       return;

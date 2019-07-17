@@ -102,9 +102,25 @@ function createRegistrationNumber() {
      } 
 
      function displayError(name) {
+        let capeTownReg = name.startsWith("CA") || name.startsWith("ca") || name.startsWith("cA") || name.startsWith("Ca"),
+            paarlReg = name.startsWith('CJ') || name.startsWith("cj") || name.startsWith("cJ") || name.startsWith("Cj"),
+            bellvilleReg = name.startsWith('CY') || name.startsWith("cy") || name.startsWith("cY") || name.startsWith("Cy"),
+            stellenboschReg = name.startsWith('CL') || name.startsWith("cl") || name.startsWith("cL") || name.startsWith("Cl");
         return name == "" || !isNaN(name); 
+        //alert(!name.startsWith("CA"));
      }
 
+     function validInput(name) {
+        return name.startsWith("CA") || name.startsWith("ca") || name.startsWith("cA") || name.startsWith("Ca") ||
+            name.startsWith('CJ') || name.startsWith("cj") || name.startsWith("cJ") || name.startsWith("Cj") ||
+            name.startsWith('CY') || name.startsWith("cy") || name.startsWith("cY") || name.startsWith("Cy") ||
+            name.startsWith('CL') || name.startsWith("cl") || name.startsWith("cL") || name.startsWith("Cl");
+     }
+     
+    //  return capeTownReg = name.startsWith("CA") || name.startsWith("ca") || name.startsWith("cA") || name.startsWith("Ca"),
+    //  paarlReg = name.startsWith('CJ') || name.startsWith("cj") || name.startsWith("cJ") || name.startsWith("Cj"),
+    //  bellvilleReg = name.startsWith('CY') || name.startsWith("cy") || name.startsWith("cY") || name.startsWith("Cy"),
+    //  stellenboschReg = name.startsWith('CL') || name.startsWith("cl") || name.startsWith("cL") || name.startsWith("Cl");
     return {
         setRegNumber,
         getRegNumber,
@@ -115,17 +131,20 @@ function createRegistrationNumber() {
         setRegObj,
         getRegObj,
         checkRegNumber,
-        displayError
+        displayError,
+        validInput
 
     }
 }
 
-// const registrationsInstance = createRegistrationNumber();
+ const registrationsInstance = createRegistrationNumber();
 // //let testArr = ['CL 900', 'CJ 678 543', 'CA 34567', 'CJ 67890', 'CN 7864', 'CA 888', 'CY 789', 'CL 7878'] ;
 // let testArr = [{registration: 'CL 900'}, {registration: 'CJ 678 543'}, {registration:'CA 34567'}, {registration:'CJ 67890'}, {registration:'CN 7864'}, {registration:'CA 888'}, {registration:'CY 789'}, {registration:'CL 7878'}]    
 
 // registrationsInstance.setRegNumber('CA 1234');
 // alert(registrationsInstance.getRegNumber());
+
+//alert(registrationsInstance.validInput('cb 44444'));
 
 // let capeRegs = registrationsInstance.getAllFromCapeTown(testArr)
 // console.log(capeRegs);
