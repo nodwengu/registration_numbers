@@ -113,14 +113,6 @@ function createRegistrationNumber() {
             name.startsWith('CL') || name.startsWith("cl") || name.startsWith("cL") || name.startsWith("Cl");
      }
 
-    //  function validInput(name) {
-    //     return name.startsWith("CA") || name.startsWith('CJ') || name.startsWith('CY') || name.startsWith('CL');
-    //  }
-     
-    //  return capeTownReg = name.startsWith("CA") || name.startsWith("ca") || name.startsWith("cA") || name.startsWith("Ca"),
-    //  paarlReg = name.startsWith('CJ') || name.startsWith("cj") || name.startsWith("cJ") || name.startsWith("Cj"),
-    //  bellvilleReg = name.startsWith('CY') || name.startsWith("cy") || name.startsWith("cY") || name.startsWith("Cy"),
-    //  stellenboschReg = name.startsWith('CL') || name.startsWith("cl") || name.startsWith("cL") || name.startsWith("Cl");
     return {
         setRegNumber,
         getRegNumber,
