@@ -62,5 +62,17 @@ describe("createRegistrationNumber Function", function() {
 
         assert.equal(registrationsInstance.checkRegNumber(data), true);
     });
+
+    it('should return true when registration number provided is a valid registration number', function(){
+        var registrationsInstance = createRegistrationNumber();
+
+        assert.equal(registrationsInstance.validInput('CA 4545'), true);
+    });
+
+    it('should return false when registration number provided is INVALID registration number', function(){
+        var registrationsInstance = createRegistrationNumber();
+
+        assert.equal(registrationsInstance.validInput('CB 4545'), false);
+    });
     
 });
