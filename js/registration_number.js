@@ -32,7 +32,7 @@ function storeRegistration() {
 
    if(localStorage.getItem('registrationNumbers')) {
 
-      if( registrationNumberInstance.checkRegNumber(data) ) {
+      if( registrationNumberInstance.checkRegNumber(data) || registrationNumberInstance.validInput(regNoInputVal) ) {
          return;
       } else {
          registrations = JSON.parse(localStorage.getItem('registrationNumbers'));

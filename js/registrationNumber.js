@@ -4,7 +4,7 @@ function createRegistrationNumber() {
     let regNumberEntered = {};
 
     function setRegNumber(regVal) {
-        registrationNumber = regVal.toUpperCase();
+        registrationNumber = regVal;
     }
 
     function getRegNumber() {
@@ -93,7 +93,7 @@ function createRegistrationNumber() {
         let newRegNumber = getRegNumber();
         for(let key in regNumberEntered) {
           if(regNumberEntered.hasOwnProperty(newRegNumber)) {
-              //alert(newRegNumber + " already exists");
+              alert(newRegNumber + " already exists");
               repeated  = true;
               break;
           } 
@@ -102,10 +102,6 @@ function createRegistrationNumber() {
      } 
 
      function displayError(name) {
-        let capeTownReg = name.startsWith("CA") || name.startsWith("ca") || name.startsWith("cA") || name.startsWith("Ca"),
-            paarlReg = name.startsWith('CJ') || name.startsWith("cj") || name.startsWith("cJ") || name.startsWith("Cj"),
-            bellvilleReg = name.startsWith('CY') || name.startsWith("cy") || name.startsWith("cY") || name.startsWith("Cy"),
-            stellenboschReg = name.startsWith('CL') || name.startsWith("cl") || name.startsWith("cL") || name.startsWith("Cl");
         return name == "" || !isNaN(name); 
         //alert(!name.startsWith("CA"));
      }
