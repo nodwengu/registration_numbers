@@ -9,7 +9,7 @@ const registrationNumberInstance = createRegistrationNumber();
 
 if(localStorage.getItem('registrationNumbers')) {
    for(let i = 0; i < data.length; i++) {
-   registrationNumberElem.innerHTML += "<div>" + data[i].registration + "</div>";
+      registrationNumberElem.innerHTML += "<div>" + data[i].registration + "</div>";
    }
 }
 

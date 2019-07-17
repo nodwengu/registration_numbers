@@ -4,7 +4,7 @@ function createRegistrationNumber() {
     let regNumberEntered = {};
 
     function setRegNumber(regVal) {
-        registrationNumber = regVal;
+        registrationNumber = regVal.toUpperCase();
     }
 
     function getRegNumber() {
