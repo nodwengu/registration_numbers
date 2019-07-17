@@ -4,7 +4,7 @@ function createRegistrationNumber() {
     let regNumberEntered = {};
 
     function setRegNumber(regVal) {
-        registrationNumber = regVal;
+        registrationNumber = regVal.toUpperCase();
     }
 
     function getRegNumber() {
@@ -16,7 +16,7 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            let registrationNumber = elem.registration.toUpperCase();
+            let registrationNumber = elem.registration;
           
             if(registrationNumber.startsWith("CA")) {
                 capeTownNumbers.push(elem);
@@ -30,7 +30,7 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            let registrationNumber = elem.registration.toUpperCase();
+            let registrationNumber = elem.registration;
 
             if(registrationNumber.startsWith("CJ")) {
                 paarlNumbers.push(elem);
@@ -44,7 +44,7 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            let registrationNumber = elem.registration.toUpperCase();
+            let registrationNumber = elem.registration;
             
             if(registrationNumber.startsWith("CY")) {
                 bellvilleNumbers.push(elem);
@@ -58,7 +58,7 @@ function createRegistrationNumber() {
 
         for(let i = 0; i < regNumbers.length; i++){
             let elem = regNumbers[i];
-            let registrationNumber = elem.registration.toUpperCase();
+            let registrationNumber = elem.registration;
             
             if(registrationNumber.startsWith("CL")) {
                 stellenboschNumbers.push(elem);
@@ -93,7 +93,7 @@ function createRegistrationNumber() {
         let newRegNumber = getRegNumber();
         for(let key in regNumberEntered) {
           if(regNumberEntered.hasOwnProperty(newRegNumber)) {
-              alert(newRegNumber + " already exists");
+              //alert(newRegNumber + " already exists");
               repeated  = true;
               break;
           } 
@@ -112,6 +112,10 @@ function createRegistrationNumber() {
             name.startsWith('CY') || name.startsWith("cy") || name.startsWith("cY") || name.startsWith("Cy") ||
             name.startsWith('CL') || name.startsWith("cl") || name.startsWith("cL") || name.startsWith("Cl");
      }
+
+    //  function validInput(name) {
+    //     return name.startsWith("CA") || name.startsWith('CJ') || name.startsWith('CY') || name.startsWith('CL');
+    //  }
      
     //  return capeTownReg = name.startsWith("CA") || name.startsWith("ca") || name.startsWith("cA") || name.startsWith("Ca"),
     //  paarlReg = name.startsWith('CJ') || name.startsWith("cj") || name.startsWith("cJ") || name.startsWith("Cj"),

@@ -14,6 +14,7 @@ if(localStorage.getItem('registrationNumbers')) {
 }
 
 function storeRegistration() {
+   data = JSON.parse(localStorage.getItem('registrationNumbers'));
    let regNoInputVal = document.querySelector('#regNoInput').value;
 
    if( registrationNumberInstance.displayError(regNoInputVal) || !registrationNumberInstance.validInput(regNoInputVal)) {
@@ -29,11 +30,12 @@ function storeRegistration() {
 
    let registrations = [];
    let obj = registrationNumberInstance.getRegObj();
+   
 
    if(localStorage.getItem('registrationNumbers')) {
-
-      if( registrationNumberInstance.checkRegNumber(data) || registrationNumberInstance.validInput(regNoInputVal) ) {
-         return;
+//alert(registrationNumberInstance.checkRegNumber(data));
+      if( registrationNumberInstance.checkRegNumber(data) ) {
+         return false;
       } else {
          registrations = JSON.parse(localStorage.getItem('registrationNumbers'));
          registrations.push(obj);
